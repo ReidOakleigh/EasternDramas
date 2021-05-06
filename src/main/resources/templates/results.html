@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Easter Dramas</title>
+<link th:href="@{/styles.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<h2>Eastern Dramas</h2>
+	<form>
+		<table>
+			<tr>
+				<th class="name">Drama Title</th>
+				<th class="numOfReviews">Reviews</th>
+				<th class="revStars">Stars</th>
+				<th class="releaseYear">Year</th>
+				<th class="country">Country</th>
+				<th class="primaryLang">Language</th>
+				<th class="subtitled">Subtitles</th>
+				<th class="genre">Genre</th>
+				<th class="rating">Rating</th>
+			</tr>
+			<tr th:each="drama:${dramas}">
+				<td class="name" th:text="${drama.dramaTitle}"></td>
+				<td class="number" th:text="${#numbers.formatInteger(drama.numOfReviews,1,'COMMA')}"></td>
+				<td class="number" th:text="${drama.revStars}"></td>
+				<td class="releaseYear" th:text="${drama.releaseYear}"></td>
+				<td class="country" th:text="${drama.country}"></td>
+				<td class="primaryLang" th:text="${drama.language}"></td>
+				<td class="subtitles" th:text="${drama.subtitles}"></td>
+				<td class="genre" th:text="${drama.genre}"></td>
+				<td class="rating" th:text="${drama.rating}"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eastern Dramas</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<h2>Eastern Dramas</h2>
+<form id="menu1" th:object="${sel}" th:action="@{/menu2}" method="POST">
+  <table>
+    <tr>How do you want to search for an Eastern Drama?</tr>
+      <tr> <td>1</td> <td>Country of origin</td> </tr>
+      <tr> <td>2</td> <td>Primary language</td></tr>
+      <tr> <td>3</td> <td>Subtitles</td></tr>
+      <tr> <td>4</td> <td>Genre</td></tr>
+      <tr> <td>5</td> <td>Industry rating</td></tr>
+      <tr>
+        <td><label for="opt">##</label></td>
+        <td><input id="opt" name="opt" size="1" th:field="*{opt1}" type="number" required/></td>
+      </tr>
+  </table>
+  <br /> <input name="submit" type="submit" value="submit" />
+</form>
+</body>
+</html>

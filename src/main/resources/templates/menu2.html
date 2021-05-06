@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eastern Dramas</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<h2>Eastern Dramas</h2>
+<form id="menu2" th:object="${sel}" th:action="@{/process}" method="POST">
+  <table>
+      <tr><td> </td><td th:text="${value}"></td></tr>
+    <tr th:each="selection:${selections}">
+        <td th:text="${selection.num}"></td>
+        <td th:text="${selection.text}"></td>
+    </tr>
+    <tr>
+        <td><label for="opt2">##</label></td>
+        <td><input id="opt2" name="opt1" size="2" th:field="*{opt2}" type="number" required/></td>
+    </tr>
+      <tr>
+        <td><input id="opt1" name="opt1" th:field="*{opt1}" type="hidden"/></td>
+    </tr>
+  </table>
+  <br /> <input name="submit" type="submit" value="submit" />
+</form>
+</body>
+</html>
